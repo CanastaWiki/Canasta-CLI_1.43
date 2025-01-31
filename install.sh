@@ -20,7 +20,7 @@ EOF
 
 list_versions() {
   echo "Fetching available versions..."
-  releases=$(wget -qO- "https://api.github.com/repos/CanastaWiki/Canasta-CLI/releases")
+  releases=$(wget -qO- "https://api.github.com/repos/CanastaWiki/Canasta-CLI_1.43/releases")
   versions=$(echo "$releases" | grep -Po '"tag_name": "\K.*?(?=")')
 
   echo "Available versions:"
@@ -132,9 +132,9 @@ download_and_install() {
   check_wget_show_progress
 
   if [ "$VERSION" == "latest" ]; then
-    canasta_url="https://github.com/CanastaWiki/Canasta-CLI/releases/latest/download/canasta"
+    canasta_url="https://github.com/CanastaWiki/Canasta-CLI_1.43/releases/latest/download/canasta"
   else
-    canasta_url="https://github.com/CanastaWiki/Canasta-CLI/releases/download/v${VERSION}/canasta"
+    canasta_url="https://github.com/CanastaWiki/Canasta-CLI_1.43/releases/download/v${VERSION}/canasta"
   fi
 
   echo "Downloading Canasta CLI version $VERSION..."
